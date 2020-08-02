@@ -1,0 +1,27 @@
+  0       out         extruder              0
+  0       out         heater                0
+
+  1re     out         extruder              0
+  1re     out         heater                0
+
+  2re     out         extruder              0
+  2re     out         heater                0
+
+  3re     out         extruder              0
+  3re     out         heater                1
+
+  4re     out         extruder              0
+  4re     out         heater                0
+
+  5re     out         extruder              1
+  5re     out         heater                0
+
+  6re     out         extruder              0
+  6re     out         heater                1
+
+  7re     out         extruder              0
+  7re     out         heater                1
+
+  8re     out         extruder              0
+  8re     out         heater                1
+

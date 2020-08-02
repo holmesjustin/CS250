@@ -1,0 +1,70 @@
+{
+  "test_dir": "tests",
+  "mode": "logisim",
+  "test_suite_names": ["circuit1a", "circuit1c", "adder", "plastic"],
+  "non_zero_exit_status_penalty": 1.0,
+  "memory_penalty": 1.0,
+  "test_suites": {
+    "circuit1a": [
+      { "desc": "A=0, B=0, C=0",  "args": ["-ip", "A=0,B=0,C=0", "-c", "0"] },
+      { "desc": "A=0, B=0, C=1",  "args": ["-ip", "A=0,B=0,C=1", "-c", "0"] },
+      { "desc": "A=1, B=0, C=1",  "args": ["-ip", "A=1,B=0,C=1", "-c", "0"] },
+      { "desc": "A=1, B=1, C=1",  "args": ["-ip", "A=1,B=1,C=1", "-c", "0"] }
+    ],
+    "circuit1c": [
+      { "desc": "A=0, B=0, C=0",  "args": ["-ip", "A=0,B=0,C=0", "-c", "0"] },
+      { "desc": "A=0, B=0, C=1",  "args": ["-ip", "A=0,B=0,C=1", "-c", "0"] },
+      { "desc": "A=0, B=1, C=0",  "args": ["-ip", "A=0,B=1,C=0", "-c", "0"] },
+      { "desc": "A=1, B=0, C=0",  "args": ["-ip", "A=1,B=0,C=0", "-c", "0"] }
+    ],
+
+    "adder": [
+      { "desc": "A=0xABCD, B=0x5678, sub=0", "args": ["-c", "0", "-ip", "A=0xABCD,B=0x5678,sub=0", "-of", "h"] },
+      { "desc": "A=0x7531, B=0x6420, sub=1", "args": ["-c", "0", "-ip", "A=0x7531,B=0x6420,sub=1", "-of", "h"] },
+      { "desc": "A=0x9BDF, B=0x8ACE, sub=0", "args": ["-c", "0", "-ip", "A=0x9BDF,B=0x8ACE,sub=0", "-of", "h"] },
+      { "desc": "A=0xABCD, B=0x5678, sub=1", "args": ["-c", "0", "-ip", "A=0xABCD,B=0x5678,sub=1", "-of", "h"] }
+    ],
+    "plastic": [
+      { "desc": "constant input: go=0,temp_ok=0, total cycles=5", "args": ["-ip", "go=0,temp_ok=0", "-c", "5"] },
+      { "desc": "constant input: go=0,temp_ok=1, total cycles=5", "args": ["-ip", "go=0,temp_ok=1", "-c", "5"] },
+      { "desc": "constant input: go=1,temp_ok=0, total cycles=5", "args": ["-ip", "go=1,temp_ok=0", "-c", "5"] },
+      { "desc": "constant input: go=1,temp_ok=1, total cycles=5", "args": ["-ip", "go=1,temp_ok=1", "-c", "5"] },
+      { "desc": "variable input, total cycles=12", "args": ["-ic", "2,go=0,temp_ok=0:4,go=1,temp_ok=0:6,go=0,temp_ok=1:8,go=1,temp_ok=1:10,go=0,temp_ok=0", "-c", "12"] },
+      { "desc": "variable input, total cycles=8", "args": ["-ic", "2,go=0,temp_ok=0:3,go=1,temp_ok=0:4,go=0,temp_ok=1:5,go=1,temp_ok=1:6,go=0,temp_ok=0", "-c", "8"] },
+      { "desc": "variable input, total cycles=8", "args": ["-ic", "2,go=1,temp_ok=0:3,go=0,temp_ok=0:4,go=0,temp_ok=1:5,go=1,temp_ok=0:6,go=0,temp_ok=0", "-c", "8"] },
+      { "desc": "variable input, total cycles=8", "args": ["-ic", "2,go=1,temp_ok=1:3,go=0,temp_ok=1:4,go=1,temp_ok=1:5,go=0,temp_ok=1:6,go=1,temp_ok=0", "-c", "8"] },
+      { "desc": "variable input, total cycles=8", "args": ["-ic", "2,go=1,temp_ok=1:3,go=0,temp_ok=1:4,go=1,temp_ok=1:5,go=0,temp_ok=1:6,go=1,temp_ok=1", "-c", "8"] },
+      { "desc": "random input, total cycles=105", "args": ["-ic", "2,go=0,temp_ok=1:3,go=0,temp_ok=1:4,go=1,temp_ok=0:5,go=1,temp_ok=0:6,go=1,temp_ok=0:7,go=1,temp_ok=1:8,go=1,temp_ok=1:9,go=1,temp_ok=0:10,go=1,temp_ok=1:11,go=1,temp_ok=1:12,go=0,temp_ok=1:13,go=0,temp_ok=0:14,go=0,temp_ok=0:15,go=1,temp_ok=1:16,go=0,temp_ok=1:17,go=1,temp_ok=1:18,go=1,temp_ok=1:19,go=1,temp_ok=1:20,go=0,temp_ok=0:21,go=1,temp_ok=1:22,go=1,temp_ok=1:23,go=0,temp_ok=1:24,go=1,temp_ok=1:25,go=1,temp_ok=1:26,go=0,temp_ok=0:27,go=0,temp_ok=0:28,go=1,temp_ok=0:29,go=1,temp_ok=0:30,go=0,temp_ok=0:31,go=1,temp_ok=1:32,go=1,temp_ok=1:33,go=1,temp_ok=1:34,go=1,temp_ok=1:35,go=1,temp_ok=1:36,go=0,temp_ok=1:37,go=0,temp_ok=0:38,go=1,temp_ok=1:39,go=1,temp_ok=0:40,go=0,temp_ok=1:41,go=1,temp_ok=0:42,go=0,temp_ok=1:43,go=0,temp_ok=1:44,go=0,temp_ok=1:45,go=0,temp_ok=1:46,go=0,temp_ok=0:47,go=1,temp_ok=0:48,go=1,temp_ok=0:49,go=1,temp_ok=1:50,go=1,temp_ok=0:51,go=0,temp_ok=1:52,go=1,temp_ok=1:53,go=0,temp_ok=1:54,go=0,temp_ok=0:55,go=1,temp_ok=1:56,go=0,temp_ok=0:57,go=1,temp_ok=1:58,go=1,temp_ok=0:59,go=1,temp_ok=0:60,go=1,temp_ok=0:61,go=1,temp_ok=1:62,go=1,temp_ok=0:63,go=1,temp_ok=1:64,go=0,temp_ok=0:65,go=0,temp_ok=1:66,go=0,temp_ok=0:67,go=0,temp_ok=1:68,go=0,temp_ok=1:69,go=0,temp_ok=1:70,go=1,temp_ok=1:71,go=0,temp_ok=1:72,go=0,temp_ok=0:73,go=0,temp_ok=1:74,go=1,temp_ok=1:75,go=0,temp_ok=1:76,go=0,temp_ok=1:77,go=0,temp_ok=0:78,go=0,temp_ok=1:79,go=0,temp_ok=0:80,go=0,temp_ok=1:81,go=0,temp_ok=0:82,go=1,temp_ok=0:83,go=1,temp_ok=0:84,go=0,temp_ok=1:85,go=1,temp_ok=0:86,go=1,temp_ok=0:87,go=1,temp_ok=1:88,go=1,temp_ok=0:89,go=0,temp_ok=1:90,go=0,temp_ok=0:91,go=0,temp_ok=1:92,go=1,temp_ok=1:93,go=1,temp_ok=0:94,go=1,temp_ok=1:95,go=0,temp_ok=1:96,go=1,temp_ok=1:97,go=1,temp_ok=0:98,go=1,temp_ok=1:99,go=0,temp_ok=1:100,go=1,temp_ok=0:101,go=1,temp_ok=1", "-c", "12"] }
+    ]
+  },
+  "disallowed_components": {
+    "circuit1a": [
+      {
+        "penalty": 0.5,
+        "components": ["Button", "Joystick", "Keyboard", "LED", "7-Segment Display", "Hex Digit Display", "LED", "TTY", "T Flip-Flop", "J-K Flip-Flop", "S-R Flip-Flop", "Register", "Counter", "Shift Register", "Random", "RAM", "ROM", "Adder", "Subtractor", "Multiplier", "Divider", "Negator", "Comparator", "Shifter", "BitAdder", "BitFinder", "Demultiplexer", "Decoder", "Priority Encoder", "BitSelector", "Buffer", "Odd Parity", "Even Parity", "Controlled Buffer", "Controlled Inverter", "Pull Resistor", "Transistor", "Transmission Gate", "Bit Extender"]
+      }
+    ],
+    "circuit1c": [
+      {
+        "penalty": 0.5,
+        "components": ["Button", "Joystick", "Keyboard", "LED", "7-Segment Display", "Hex Digit Display", "LED", "TTY", "T Flip-Flop", "J-K Flip-Flop", "S-R Flip-Flop", "Register", "Counter", "Shift Register", "Random", "RAM", "ROM", "Adder", "Subtractor", "Multiplier", "Divider", "Negator", "Comparator", "Shifter", "BitAdder", "BitFinder", "Demultiplexer", "Decoder", "Priority Encoder", "BitSelector", "Buffer", "Odd Parity", "Even Parity", "Controlled Buffer", "Controlled Inverter", "Pull Resistor", "Transistor", "Transmission Gate", "Bit Extender"]
+      }
+    ],
+    "adder": [
+      {
+        "penalty": 0.5,
+        "components": ["Button", "Joystick", "Keyboard", "LED", "7-Segment Display", "Hex Digit Display", "LED", "TTY", "T Flip-Flop", "J-K Flip-Flop", "S-R Flip-Flop", "Register", "Counter", "Shift Register", "Random", "RAM", "ROM", "Multiplier", "Divider", "Negator", "Comparator", "Shifter", "BitAdder", "BitFinder", "Demultiplexer", "Decoder", "Priority Encoder", "BitSelector", "Buffer", "Odd Parity", "Even Parity", "Controlled Buffer", "Controlled Inverter", "Pull Resistor", "Transistor", "Transmission Gate", "Bit Extender"]
+      },
+      {
+        "penalty": 0.0,
+        "components": ["Adder", "Subtractor"]
+      }
+    ],
+    "plastic": [
+      {
+        "penalty": 0.5,
+        "components": ["Joystick", "Keyboard", "LED", "7-Segment Display", "Hex Digit Display", "LED", "TTY", "T Flip-Flop", "J-K Flip-Flop", "S-R Flip-Flop", "Register", "Counter", "Shift Register", "Random", "RAM", "ROM", "Adder", "Subtractor", "Multiplier", "Divider", "Negator", "Comparator", "Shifter", "BitAdder", "BitFinder", "Demultiplexer", "Decoder", "Priority Encoder", "BitSelector", "Buffer", "Odd Parity", "Even Parity", "Controlled Buffer", "Controlled Inverter", "Pull Resistor", "Transistor", "Transmission Gate", "Bit Extender"]
+      }
+    ]
+  }
+}
