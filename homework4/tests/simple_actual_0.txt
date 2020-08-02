@@ -1,0 +1,14 @@
+Exception in thread "main" java.lang.reflect.InvocationTargetException
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at org.eclipse.jdt.internal.jarinjarloader.JarRsrcLoader.main(JarRsrcLoader.java:58)
+Caused by: java.lang.NoClassDefFoundError: org/apache/commons/cli/CommandLineParser
+	at edu.duke.logisim.autograder.Main.main(Main.java:7)
+	... 5 more
+Caused by: java.lang.ClassNotFoundException: org.apache.commons.cli.CommandLineParser
+	at java.base/java.net.URLClassLoader.findClass(URLClassLoader.java:435)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:589)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:522)
+	... 6 more

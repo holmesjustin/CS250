@@ -1,0 +1,107 @@
+{
+  "test_dir": "tests",
+  "mode": "logisim",
+  "force_suite_filename": "cpu.circ",
+  "test_suite_names": ["simple", "boolean", "arithmetic", "shift", "memory", "control", "io", "recurse"],
+  "non_zero_exit_status_penalty": 1.0,
+  "memory_penalty": 1.0,
+  "test_suites": {
+    "simple": [
+        {
+            "desc": "addi basics",
+            "args": [
+                "-c", "10",
+                "-ic", "1,reset=1:2,reset=0", 
+                "-lo", "tests/simple.imem.lgsim",
+                "-la", "tests/simple.dmem.lgsim"
+            ],
+            "filter": "logisim_strip_blank_probes"
+        }
+    ],
+    "boolean": [
+        {
+            "desc": "not and xor",
+            "args": [
+                "-c", "10",
+                "-ic", "1,reset=1:2,reset=0",
+                "-lo", "tests/boolean.imem.lgsim",
+                "-la", "tests/boolean.dmem.lgsim"
+            ],
+            "filter": "logisim_strip_blank_probes"
+        }
+    ],
+    "arithmetic": [
+        {
+            "desc": "addi, add, sub instructions",
+            "args": [
+                "-c", "10",
+                "-ic", "1,reset=1:2,reset=0",
+                "-lo", "tests/arithmetic.imem.lgsim",
+                "-la", "tests/arithmetic.dmem.lgsim"
+            ],
+            "filter": "logisim_strip_blank_probes"
+        }
+    ],
+    "shift": [
+        {
+            "desc": "sll, sra instructions",
+            "args": [
+                "-c", "60",
+                "-ic", "1,reset=1:2,reset=0",
+                "-lo", "tests/shift.imem.lgsim",
+                "-la", "tests/shift.dmem.lgsim"
+            ],
+            "filter": "logisim_strip_blank_probes"
+        }
+    ],
+    "memory": [
+        {
+            "desc": "lw, sw instructions",
+            "args": [
+                "-c", "20",
+                "-ic", "1,reset=1:2,reset=0",
+                "-lo", "tests/memory.imem.lgsim",
+                "-la", "tests/memory.dmem.lgsim"
+            ],
+            "filter": "logisim_strip_blank_probes"
+        }
+    ],
+    "control": [
+        {
+            "desc": "blt, bne, jal, j, jr instructions",
+            "args": [
+                "-c", "12",
+                "-ic", "1,reset=1:2,reset=0",
+                "-lo", "tests/control.imem.lgsim",
+                "-la", "tests/control.dmem.lgsim"
+            ],
+            "filter": "logisim_strip_blank_probes"
+        }
+    ],
+    "io": [
+        {
+            "desc": "input, output instructions",
+            "args": [
+                "-lo", "tests/io.imem.lgsim",
+                "-la", "tests/io.dmem.lgsim",
+                "-lk", "tests/io.buffer",
+                "-c", "20",
+                "-tty", "full"
+            ],
+            "filter": "logisim_strip_blank_probes"
+        }
+    ],
+    "recurse": [
+        {
+            "desc": "recursive fibonacci",
+            "args": [
+                "-c", "175",
+                "-ic", "1,reset=1:2,reset=0",
+                "-lo", "tests/recurse.imem.lgsim",
+                "-la", "tests/recurse.dmem.lgsim"
+            ],
+            "filter": "logisim_strip_blank_probes"
+        }
+    ]
+  }
+}
