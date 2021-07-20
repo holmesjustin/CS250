@@ -1,2 +1,2 @@
 # CS250
-CS250 at Duke University
+CS250 - Computer Architecture coursework
